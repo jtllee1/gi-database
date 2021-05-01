@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  title: MyString
+  rarity: 1
+  element: MyString
+  birthday: 2021-05-01
+  description: MyText
+
+two:
+  name: MyString
+  title: MyString
+  rarity: 1
+  element: MyString
+  birthday: 2021-05-01
+  description: MyText

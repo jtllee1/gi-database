@@ -19,4 +19,12 @@ prefix_url = "https://genshin.honeyhunterworld.com"
   @links << prefix_url + suffix_url['href']
 end
 
-puts @links
+def name_scrape(doc)
+  character_name = doc.search('.custom_title').text
+end
+
+@links.each do |link|
+  html_file = open(link).read
+  html_doc = Nokogiri::HTML(html_file)
+  name_scrape(html_doc)
+end

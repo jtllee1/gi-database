@@ -29,9 +29,17 @@ def title_scrape(doc)
   return table[1].text
 end
 
+def rarity_scrape(doc)
+  tables = doc.search('.item_main_table')
+  table = tables.first
+  stars = table.search('.sea_char_stars')
+  return stars.length
+end
+
 @links.each do |link|
   html_file = open(link).read
   html_doc = Nokogiri::HTML(html_file)
   # name_scrape(html_doc)
-  #title_scrape(html_doc)
+  # title_scrape(html_doc)
+  # rarity_scrape(html_doc)
 end

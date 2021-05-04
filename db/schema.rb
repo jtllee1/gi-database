@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 2021_05_01_214505) do
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
+    t.string "image"
     t.string "name"
     t.string "title"
     t.integer "rarity"
     t.string "weapon"
     t.string "element"
-    t.date "birthday"
+    t.string "birthday"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

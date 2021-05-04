@@ -23,9 +23,9 @@ def name_scrape(doc)
   doc.search('.custom_title').text
 end
 
-def title_scrape(doc)
+def scrape(doc, index)
   tables = doc.search('.item_main_table tr')
-  table = tables[1].search('td')
+  table = tables[index].search('td')
   return table[1].text
 end
 
@@ -44,8 +44,10 @@ end
 @links.each do |link|
   html_file = open(link).read
   html_doc = Nokogiri::HTML(html_file)
-  puts name_scrape(html_doc)
-  puts title_scrape(html_doc)
-  puts rarity_scrape(html_doc)
-  puts weapon_scrape(html_doc)
+  puts character_name = name_scrape(html_doc)
+  puts title = scrape(html_doc, 1)
+  puts rarity = rarity_scrape(html_doc)
+  puts weapon = weapon_scrape(html_doc)
+  puts birthday = scrape(html_doc, 5)
+  puts description = scrape(html_doc, 11)
 end

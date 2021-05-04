@@ -4,6 +4,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :title
       t.integer :rarity
+      t.string :weapon
       t.string :element
       t.date :birthday
       t.text :description

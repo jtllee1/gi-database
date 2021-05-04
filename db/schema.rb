@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_214505) do
     t.string "name"
     t.string "title"
     t.integer "rarity"
+    t.string "weapon"
     t.string "element"
     t.date "birthday"
     t.text "description"

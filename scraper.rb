@@ -36,10 +36,16 @@ def rarity_scrape(doc)
   return stars.length
 end
 
+def weapon_scrape(doc)
+  tables = doc.search('.item_main_table a')
+  return tables.first.text
+end
+
 @links.each do |link|
   html_file = open(link).read
   html_doc = Nokogiri::HTML(html_file)
-  # name_scrape(html_doc)
-  # title_scrape(html_doc)
-  # rarity_scrape(html_doc)
+  puts name_scrape(html_doc)
+  puts title_scrape(html_doc)
+  puts rarity_scrape(html_doc)
+  puts weapon_scrape(html_doc)
 end

@@ -41,10 +41,9 @@ def weapon_scrape(doc)
   return tables.first.text
 end
 
-def element_scrape(doc, prefix)
-  tables = doc.search('.item_main_table tr')
-  table = tables[4].search('img')
-  return prefix + table.first['src']
+def image_scrape(doc, class_search, prefix)
+  image = doc.search(class_search)
+  return prefix + image.first['src']
 end
 
 @links.each do |link|
@@ -56,5 +55,6 @@ end
   puts weapon = weapon_scrape(html_doc)
   puts birthday = scrape(html_doc, 5)
   puts description = scrape(html_doc, 11)
-  puts element = element_scrape(html_doc, @prefix_url)
+  puts element = image_scrape(html_doc, ".char_portrait_card_sea_element.sea_enemy_element", @prefix_url)
+  puts character_image = image_scrape(html_doc, ".itempic", @prefix_url)
 end

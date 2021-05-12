@@ -1,0 +1,10 @@
+.character-cards {
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .character-card {
+    border: 1px solid black;
+    margin: 8px;
+  }
+}

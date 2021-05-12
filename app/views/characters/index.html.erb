@@ -1,5 +1,10 @@
-<% @characters.each do |character| %>
-  <%= link_to character_path(character.id) do %>
-    <h4><%= character.name %></h4>
+<div class="character-cards">
+  <% @characters.each do |character| %>
+    <div class="character-card">
+      <%= link_to character_path(character.id) do %>
+        <h4><%= character.name %></h4>
+        <img src="<%= character.image %>" alt="<%= character.name %> image">
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>

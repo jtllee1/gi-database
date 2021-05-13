@@ -4,7 +4,19 @@
   flex-wrap: wrap;
   justify-content: center;
   .character-card {
-    border: 1px solid black;
+    border: 8px solid #b3932c;
     margin: 8px;
+    border-radius: 16px;
+    background-color: #e8e8e8;
+    text-align: center;
+    a {
+      color: black;
+    }
+  }
+  .character-card:hover {
+    border: 8px solid #9c7f22;
+    a {
+      text-decoration: none;
+    }
   }
 }

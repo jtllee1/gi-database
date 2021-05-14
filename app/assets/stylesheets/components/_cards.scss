@@ -1,5 +1,6 @@
 .character-cards {
   border: 1px solid black;
+  padding-top: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,6 +18,30 @@
     border: 8px solid #9c7f22;
     a {
       text-decoration: none;
+    }
+  }
+}
+
+.char {
+  border: 1px solid black;
+  width: 720px;
+  height: 280px;
+  margin: 32px auto;
+  display: flex;
+  justify-content: center;
+  .image {
+    border: 1px solid black;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .char-data {
+    width: 480px;
+    height: 280px;
+    text-align: center;
+    .char-row {
+      border: 1px solid black;
     }
   }
 }

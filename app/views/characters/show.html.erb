@@ -1,1 +1,28 @@
-<%= @character.name %>
+<div class="char">
+  <div class="image">
+    <img src="<%= @character.image %>" alt="<%= @character.name %> image">
+  </div>
+  <div class="char-data">
+    <div class="char-row name">
+      <%= @character.name %>
+    </div>
+    <div class="char-row title">
+      <%= @character.title %>
+    </div>
+    <div class="char-row rarity">
+      <%= @character.rarity %>
+    </div>
+    <div class="char-row weapon">
+      <%= @character.weapon %>
+    </div>
+    <div class="char-row element">
+      <img src="<%= @character.element %>" alt="Element image">
+    </div>
+    <div class="char-row birthday">
+      <%= @character.birthday %>
+    </div>
+    <div class="char-row description">
+      <%= @character.description %>
+    </div>
+  </div>
+</div>

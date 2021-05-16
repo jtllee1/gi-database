@@ -10,7 +10,9 @@
       <%= @character.title %>
     </div>
     <div class="char-row rarity">
-      <%= @character.rarity %>
+      <% @character.rarity.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
     </div>
     <div class="char-row weapon">
       <%= @character.weapon %>

@@ -1,5 +1,4 @@
 .character-cards {
-  border: 1px solid black;
   padding-top: 16px;
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +8,7 @@
     margin: 8px;
     border-radius: 16px;
     background-color: #e8e8e8;
+    box-shadow: 4px 6px #cecece;
     text-align: center;
     a {
       color: black;
@@ -26,6 +26,7 @@
   border: 1px solid #9c7f22;
   border-radius: 8px;
   background-color: #f7f7f7;
+  box-shadow: 10px 8px #cecece;
   width: 720px;
   margin: 32px auto;
   display: flex;

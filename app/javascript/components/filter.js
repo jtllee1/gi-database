@@ -4,14 +4,23 @@ const filter = () => {
 
   elements.forEach(element => {
     element.addEventListener('click', () => {
-      characters.forEach(character => {
-        if (character.classList.contains(element.src)) {
+      element.classList.toggle("selected");
+
+      if (element.classList.contains("selected")) {
+        characters.forEach(character => {
+          if (character.classList.contains(element.src)) {
+            character.classList.remove("invisible");
+          }
+          else {
+            character.classList.add("invisible");
+          };
+        });
+      }
+      else {
+        characters.forEach(character => {
           character.classList.remove("invisible");
-        }
-        else {
-          character.classList.add("invisible");
-        };
-      });
+        });
+      };
     });
   });
 };

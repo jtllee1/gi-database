@@ -1,49 +1,27 @@
 <div class="element-filter">
-  <%= form_tag characters_path, method: :get do %>
-    <label>
-      <%= check_box_tag "element","https://genshin.honeyhunterworld.com/img/icons/element/pyro_35.png" , false, class: "invisible" %>
-      <div class="element-tag">
-        <img src="https://genshin.honeyhunterworld.com/img/icons/element/pyro_35.png" alt="Pryo">
-      </div>
-    </label>
-    <label>
-      <%= check_box_tag "element","https://genshin.honeyhunterworld.com/img/icons/element/hydro_35.png" , false, class: "invisible" %>
-      <div class="element-tag">
-        <img src="https://genshin.honeyhunterworld.com/img/icons/element/hydro_35.png" alt="Hydro">
-      </div>
-    </label>
-    <label>
-      <%= check_box_tag "element","https://genshin.honeyhunterworld.com/img/icons/element/electro_35.png" , false, class: "invisible" %>
-      <div class="element-tag">
-        <img src="https://genshin.honeyhunterworld.com/img/icons/element/electro_35.png" alt="Electro">
-      </div>
-    </label>
-    <label>
-      <%= check_box_tag "element","https://genshin.honeyhunterworld.com/img/icons/element/anemo_35.png" , false, class: "invisible" %>
-      <div class="element-tag">
-        <img src="https://genshin.honeyhunterworld.com/img/icons/element/anemo_35.png" alt="Anemo">
-      </div>
-    </label>
-    <label>
-      <%= check_box_tag "element","https://genshin.honeyhunterworld.com/img/icons/element/cryo_35.png" , false, class: "invisible" %>
-      <div class="element-tag">
-        <img src="https://genshin.honeyhunterworld.com/img/icons/element/cryo_35.png" alt="Cryo">
-      </div>
-    </label>
-    <label>
-      <%= check_box_tag "element","https://genshin.honeyhunterworld.com/img/icons/element/geo_35.png" , false, class: "invisible" %>
-      <div class="element-tag">
-        <img src="https://genshin.honeyhunterworld.com/img/icons/element/geo_35.png" alt="Geo">
-      </div>
-    </label>
-    <%= submit_tag "Filter", class: "button" %>
-    <%= link_to "Reset Filter", characters_path, class: "button"  %>
-  <% end %>
+  <div class="element-tag">
+    <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/pyro_35.png" alt="Pryo">
+  </div>
+  <div class="element-tag">
+    <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/hydro_35.png" alt="Hydro">
+  </div>
+  <div class="element-tag">
+    <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/electro_35.png" alt="Electro">
+  </div>
+  <div class="element-tag">
+    <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/anemo_35.png" alt="Anemo">
+  </div>
+  <div class="element-tag">
+    <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/cryo_35.png" alt="Cryo">
+  </div>
+  <div class="element-tag">
+    <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/geo_35.png" alt="Geo">
+  </div>
 </div>
 
 <div class="character-cards">
   <% @characters.each do |character| %>
-    <div class="character-card">
+    <div class="character-card <%= character.element %>">
       <%= link_to character_path(character.id) do %>
         <img src="<%= character.image %>" alt="<%= character.name %> image">
         <h4><b><%= character.name %></b></h4>

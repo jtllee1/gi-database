@@ -4,6 +4,12 @@ const filter = () => {
 
   elements.forEach(element => {
     element.addEventListener('click', () => {
+      if (!element.classList.contains("selected")) {
+        elements.forEach(element => {
+          element.classList.remove("selected");
+        });
+      };
+
       element.classList.toggle("selected");
 
       if (element.classList.contains("selected")) {

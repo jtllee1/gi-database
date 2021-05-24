@@ -1,3 +1,24 @@
 .invisible {
   display: none;
 }
+
+.element-filter {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  .element-tag {
+    .element {
+      border: 4px solid #634004;
+      background-color: #9e8d42;
+      border-radius: 50%;
+      padding: 8px;
+      margin: 8px;
+    }
+    .selected {
+      background-color: #c5ae4d;
+    }
+    .element:hover {
+      cursor: pointer;
+    }
+  }
+}

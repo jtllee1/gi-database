@@ -5,7 +5,11 @@
 .element-filter {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  border: 8px solid #9c7f22;
+  border-radius: 16px;
+  width: 480px;
+  margin: 16px auto 0 auto;
+  background-color: #e8e8e8;
   .element-tag {
     .element {
       border: 4px solid #634004;
@@ -19,6 +23,7 @@
     }
     .element:hover {
       cursor: pointer;
+      border: 4px solid #947a24;
     }
   }
 }

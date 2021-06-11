@@ -10,8 +10,9 @@
     background-color: #e8e8e8;
     box-shadow: 4px 6px #cecece;
     text-align: center;
-    a {
+    h4 {
       color: black;
+      font-family: copperplate;
     }
   }
   .character-card:hover {
@@ -42,6 +43,7 @@
   .char-data {
     width: 480px;
     text-align: center;
+    font-weight: bold;
     .char-row {
       border: 1px solid #9c7f22;
       padding: 4px;

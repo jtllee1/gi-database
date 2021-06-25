@@ -6,9 +6,11 @@
     <div class="char-row name">
       <%= @character.name %>
     </div>
-    <div class="char-row title">
-      <%= @character.title %>
-    </div>
+    <% if @character.name != "Traveler" %>
+      <div class="char-row title">
+        <%= @character.title %>
+      </div>
+    <% end %>
     <div class="char-row rarity">
       <% @character.rarity.times do %>
         <i class="fas fa-star"></i>

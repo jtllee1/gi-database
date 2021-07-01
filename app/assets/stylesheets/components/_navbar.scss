@@ -1,8 +1,18 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: #b3932c;
+  .nav-link {
+    border: 2px solid #d2c2a196;
+    border-radius: 6px;
+    margin: 4px;
+    padding: 4px 10px;
+    width: min-content;
+  }
+  .nav-link:hover {
+    border: 2px solid #63533296;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }

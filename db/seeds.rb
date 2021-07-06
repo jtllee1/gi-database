@@ -72,6 +72,20 @@ puts "Scraping..."
   puts element = image_scrape(html_doc, ".char_portrait_card_sea_element.sea_enemy_element", @prefix_url)
   puts character_image = image_scrape(html_doc, ".itempic", @prefix_url)
 
+  if element == "https://genshin.honeyhunterworld.com/img/icons/element/pyro_35.png"
+    element = "pyro"
+  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/hydro_35.png"
+    element = "hydro"
+  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/electro_35.png"
+    element = "electro"
+  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/anemo_35.png"
+    element = "anemo"
+  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/cryo_35.png"
+    element = "cryo"
+  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/geo_35.png"
+    element = "geo"
+  end
+
   character = Character.new(
     name: character_name,
     title: title,

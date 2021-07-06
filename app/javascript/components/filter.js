@@ -18,7 +18,7 @@ const filter = () => {
       if (selectedRarity) {
         if (element.classList.contains("selected")) {
           characters.forEach(character => {
-            if (character.classList.contains(element.src) && character.classList.contains(selectedRarity.classList[0])) {
+            if (character.classList.contains(element.id) && character.classList.contains(selectedRarity.classList[0])) {
               character.classList.remove("invisible");
             }
             else {
@@ -37,7 +37,7 @@ const filter = () => {
       else {
         if (element.classList.contains("selected")) {
           characters.forEach(character => {
-            if (character.classList.contains(element.src)) {
+            if (character.classList.contains(element.id)) {
               character.classList.remove("invisible");
             }
             else {
@@ -69,7 +69,7 @@ const filter = () => {
       characters.forEach(character => {
         if (selectedElement) {
           if (rarity.classList.contains("selected-r")) {
-            if (character.classList.contains(rarity.classList[0]) && character.classList.contains(selectedElement.src)) {
+            if (character.classList.contains(rarity.classList[0]) && character.classList.contains(selectedElement.id)) {
               character.classList.remove("invisible");
             }
             else {
@@ -78,7 +78,7 @@ const filter = () => {
           }
           else {
             characters.forEach(character => {
-              if (character.classList.contains(selectedElement.src)) {
+              if (character.classList.contains(selectedElement.id)) {
                 character.classList.remove("invisible");
               };
             });

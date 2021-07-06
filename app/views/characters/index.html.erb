@@ -1,22 +1,22 @@
 <div class="filter">
   <div class="element-filter">
     <div class="element-tag">
-      <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/pyro_35.png" alt="Pryo">
+      <img class="element" id="pyro" src="<%= asset_path("pyro.png") %>" alt="Pryo">
     </div>
     <div class="element-tag">
-      <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/hydro_35.png" alt="Hydro">
+      <img class="element" id="hydro" src="<%= asset_path("hydro.png") %>" alt="Hydro">
     </div>
     <div class="element-tag">
-      <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/electro_35.png" alt="Electro">
+      <img class="element" id="electro" src="<%= asset_path("electro.png") %>" alt="Electro">
     </div>
     <div class="element-tag">
-      <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/anemo_35.png" alt="Anemo">
+      <img class="element" id="anemo" src="<%= asset_path("anemo.png") %>" alt="Anemo">
     </div>
     <div class="element-tag">
-      <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/cryo_35.png" alt="Cryo">
+      <img class="element" id="cryo" src="<%= asset_path("cryo.png") %>" alt="Cryo">
     </div>
     <div class="element-tag">
-      <img class="element" src="https://genshin.honeyhunterworld.com/img/icons/element/geo_35.png" alt="Geo">
+      <img class="element" id="geo" src="<%= asset_path("geo.png") %>" alt="Geo">
     </div>
   </div>
 
@@ -34,7 +34,7 @@
   <% @characters.each do |character| %>
     <div class="character-card <%= character.element %> <%= character.rarity %>-stars">
       <%= link_to character_path(character.id) do %>
-        <img src="<%= character.image %>" alt="<%= character.name %> image">
+        <img src="<%= asset_path("#{character.name.downcase}.png") %>" alt="<%= character.name %> image">
         <div class="lower-section">
           <div class="rarity">
             <% character.rarity.times do %>

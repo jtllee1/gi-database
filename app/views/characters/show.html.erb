@@ -1,6 +1,6 @@
 <div class="char">
   <div class="image">
-    <img src="<%= @character.image %>" alt="<%= @character.name %> image">
+    <img src="<%= asset_path("#{@character.name.downcase}.png") %>" alt="<%= @character.name %> image">
   </div>
   <div class="char-data">
     <div class="char-row name">
@@ -20,7 +20,7 @@
       <%= @character.weapon %>
     </div>
     <div class="char-row element">
-      <img src="<%= @character.element %>" alt="Element image">
+      <img src="<%= asset_path("#{@character.element}.png") %>" alt="Element image">
     </div>
     <div class="char-row birthday">
       <%= @character.birthday %>

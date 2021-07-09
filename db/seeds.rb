@@ -52,9 +52,9 @@ def weapon_scrape(doc)
   return tables.first.text
 end
 
-def image_scrape(doc, class_search, prefix)
+def image_scrape(doc, class_search)
   image = doc.search(class_search)
-  return prefix + image.first['src']
+  return image.first['src'][10..-1]
 end
 
 puts "Scraping..."
@@ -69,20 +69,20 @@ puts "Scraping..."
   puts weapon = weapon_scrape(html_doc)
   puts birthday = scrape(html_doc, 5)
   puts description = scrape(html_doc, 11)
-  puts element = image_scrape(html_doc, ".char_portrait_card_sea_element.sea_enemy_element", @prefix_url)
-  puts character_image = image_scrape(html_doc, ".itempic", @prefix_url)
+  puts element = image_scrape(html_doc, ".char_portrait_card_sea_element.sea_enemy_element")
+  puts character_image = image_scrape(html_doc, ".itempic")
 
-  if element == "https://genshin.honeyhunterworld.com/img/icons/element/pyro_35.png"
+  if element == "/element/pyro_35.png"
     element = "pyro"
-  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/hydro_35.png"
+  elsif element == "/element/hydro_35.png"
     element = "hydro"
-  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/electro_35.png"
+  elsif element == "/element/electro_35.png"
     element = "electro"
-  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/anemo_35.png"
+  elsif element == "/element/anemo_35.png"
     element = "anemo"
-  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/cryo_35.png"
+  elsif element == "/element/cryo_35.png"
     element = "cryo"
-  elsif element == "https://genshin.honeyhunterworld.com/img/icons/element/geo_35.png"
+  elsif element == "/element/geo_35.png"
     element = "geo"
   end
 

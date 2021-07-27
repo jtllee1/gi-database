@@ -33,7 +33,7 @@
 <div class="character-cards">
   <% @characters.each do |character| %>
     <div class="character-card <%= character.element %> <%= character.rarity %>-stars">
-      <%= link_to character_path(character.id) do %>
+      <%= link_to character_path(character.name) do %>
         <img src="<%= asset_path("#{character.image}") %>" alt="<%= character.name %> image">
         <div class="lower-section">
           <div class="rarity">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_194519) do
+ActiveRecord::Schema.define(version: 2021_07_30_211816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,45 @@ ActiveRecord::Schema.define(version: 2021_07_19_194519) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "teams", force: :cascade do |t|
-    t.bigint "characters_id", null: false
+  create_table "slot_1s", force: :cascade do |t|
+    t.bigint "character_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["characters_id"], name: "index_teams_on_characters_id"
+    t.index ["character_id"], name: "index_slot_1s_on_character_id"
+  end
+
+  create_table "slot_2s", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_slot_2s_on_character_id"
+  end
+
+  create_table "slot_3s", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_slot_3s_on_character_id"
+  end
+
+  create_table "slot_4s", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_slot_4s_on_character_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.bigint "slot_1_id", null: false
+    t.bigint "slot_2_id", null: false
+    t.bigint "slot_3_id", null: false
+    t.bigint "slot_4_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slot_1_id"], name: "index_teams_on_slot_1_id"
+    t.index ["slot_2_id"], name: "index_teams_on_slot_2_id"
+    t.index ["slot_3_id"], name: "index_teams_on_slot_3_id"
+    t.index ["slot_4_id"], name: "index_teams_on_slot_4_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,14 +75,18 @@ ActiveRecord::Schema.define(version: 2021_07_19_194519) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.bigint "teams_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["teams_id"], name: "index_users_on_teams_id"
   end
 
-  add_foreign_key "teams", "characters", column: "characters_id"
-  add_foreign_key "users", "teams", column: "teams_id"
+  add_foreign_key "slot_1s", "characters"
+  add_foreign_key "slot_2s", "characters"
+  add_foreign_key "slot_3s", "characters"
+  add_foreign_key "slot_4s", "characters"
+  add_foreign_key "teams", "slot_1s"
+  add_foreign_key "teams", "slot_2s"
+  add_foreign_key "teams", "slot_3s"
+  add_foreign_key "teams", "slot_4s"
 end

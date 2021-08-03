@@ -10,6 +10,11 @@ require 'nokogiri'
 
 puts "Destroying data..."
 
+Team.destroy_all
+SlotA.destroy_all
+SlotB.destroy_all
+SlotC.destroy_all
+SlotD.destroy_all
 Character.destroy_all
 
 puts "Finished!"
@@ -97,6 +102,21 @@ puts "Scraping..."
     image: character_image,
     )
   character.save!
+end
+
+puts "Creating slots!"
+
+@characters = Character.all
+
+@characters.each do |character|
+  slotA = SlotA.new(character_id: character.id)
+  slotA.save!
+  slotB = SlotB.new(character_id: character.id)
+  slotB.save!
+  slotC = SlotC.new(character_id: character.id)
+  slotC.save!
+  slotD = SlotD.new(character_id: character.id)
+  slotD.save!
 end
 
 puts "Finished!"

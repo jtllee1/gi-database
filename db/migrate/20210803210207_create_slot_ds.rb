@@ -1,6 +1,6 @@
-class CreateSlot3s < ActiveRecord::Migration[6.0]
+class CreateSlotDs < ActiveRecord::Migration[6.0]
   def change
-    create_table :slot_3s do |t|
+    create_table :slot_ds do |t|
       t.references :character, null: false, foreign_key: true
 
       t.timestamps

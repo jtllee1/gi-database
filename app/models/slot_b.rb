@@ -1,3 +1,3 @@
 class SlotB < ApplicationRecord
-  has_one :character
+  belongs_to :character
 end

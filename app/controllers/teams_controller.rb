@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
+    @slots = SlotA.all
   end
 
   def new

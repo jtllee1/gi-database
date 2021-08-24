@@ -27,12 +27,18 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-
+    find_team
+    @team.destroy
+    redirect_to teams_path
   end
 
   private
 
   def team_params
     params.require(:team).permit(:slot_a, :slot_b, :slot_c, :slot_d)
+  end
+
+  def find_team
+    @team = Team.find(params[:id])
   end
 end

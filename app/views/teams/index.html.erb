@@ -7,4 +7,7 @@
   <%= team.slot_b.character.name %>
   <%= team.slot_c.character.name %>
   <%= team.slot_d.character.name %>
+  <%= link_to team_path(team), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fa fa-trash"></i>
+  <% end %>
 <% end %>

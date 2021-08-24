@@ -3,18 +3,36 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-    @slots = SlotA.all
   end
 
   def new
+    @slotsA = SlotA.all
+    @slotsB = SlotB.all
+    @slotsC = SlotC.all
+    @slotsD = SlotD.all
     @team = Team.new
   end
 
   def create
-
+    @team = Team.new
+    @team.slot_a_id = params[:team][:slot_a]
+    @team.slot_b_id = params[:team][:slot_b]
+    @team.slot_c_id = params[:team][:slot_c]
+    @team.slot_d_id = params[:team][:slot_d]
+    if @team.save
+      redirect_to teams_path
+    else
+      render :new
+    end
   end
 
   def destroy
 
+  end
+
+  private
+
+  def team_params
+    params.require(:team).permit(:slot_a, :slot_b, :slot_c, :slot_d)
   end
 end

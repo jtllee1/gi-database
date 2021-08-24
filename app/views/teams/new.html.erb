@@ -1,0 +1,10 @@
+<%= simple_form_for @team do |f| %>
+  <div class="">
+    <%= f.select :slot_a, options_for_select(@slotsA.collect{|slot|[slot.character.name, slot.id]}) %>
+    <%= f.select :slot_b, options_for_select(@slotsB.collect{|slot|[slot.character.name, slot.id]}) %>
+    <%= f.select :slot_c, options_for_select(@slotsC.collect{|slot|[slot.character.name, slot.id]}) %>
+    <%= f.select :slot_d, options_for_select(@slotsD.collect{|slot|[slot.character.name, slot.id]}) %>
+  </div>
+  <%= f.submit "Add Team", class: "" %>
+  <%= link_to "Back", teams_path, class: "" %>
+<% end %>

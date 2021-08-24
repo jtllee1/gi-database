@@ -1,3 +1,10 @@
-<% @slots.each do |slot| %>
-  <%= slot.character.name %>
+<%= link_to new_team_path do %>
+  <p>Create Team</p>
+<% end %>
+
+<% @teams.each do |team| %>
+  <%= team.slot_a.character.name %>
+  <%= team.slot_b.character.name %>
+  <%= team.slot_c.character.name %>
+  <%= team.slot_d.character.name %>
 <% end %>

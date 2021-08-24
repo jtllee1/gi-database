@@ -1,6 +1,6 @@
 class Team < ApplicationRecord
-  has_one :slot_a
-  has_one :slot_b
-  has_one :slot_c
-  has_one :slot_d
+  belongs_to :slot_a
+  belongs_to :slot_b
+  belongs_to :slot_c
+  belongs_to :slot_d
 end

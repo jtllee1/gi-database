@@ -3,10 +3,30 @@
 <% end %>
 
 <% @teams.each do |team| %>
-  <%= team.slot_a.character.name %>
-  <%= team.slot_b.character.name %>
-  <%= team.slot_c.character.name %>
-  <%= team.slot_d.character.name %>
+  <div class="name">
+    <%= team.slot_a.character.name %>
+  </div>
+  <div class="picture">
+    <img src="<%= asset_path("#{team.slot_a.character.image}") %>">
+  </div>
+  <div class="name">
+    <%= team.slot_b.character.name %>
+  </div>
+  <div class="picture">
+    <img src="<%= asset_path("#{team.slot_b.character.image}") %>">
+  </div>
+  <div class="name">
+    <%= team.slot_c.character.name %>
+  </div>
+  <div class="picture">
+    <img src="<%= asset_path("#{team.slot_c.character.image}") %>">
+  </div>
+  <div class="name">
+    <%= team.slot_d.character.name %>
+  </div>
+  <div class="picture">
+    <img src="<%= asset_path("#{team.slot_d.character.image}") %>">
+  </div>
   <%= link_to team_path(team), method: :delete, data: { confirm: "Are you sure?" } do %>
     <i class="fa fa-trash"></i>
   <% end %>
